@@ -1,0 +1,40 @@
+{
+  "name": "@flatmate/shared",
+  "version": "1.0.0",
+  "description": "Shared TypeScript types, Zod validation schemas, and matching engine for Flatmate Platform",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./types": {
+      "types": "./src/types/index.ts",
+      "import": "./src/types/index.ts",
+      "default": "./src/types/index.ts"
+    },
+    "./schemas": {
+      "types": "./src/schemas/index.ts",
+      "import": "./src/schemas/index.ts",
+      "default": "./src/schemas/index.ts"
+    },
+    "./matching": {
+      "types": "./src/matching/index.ts",
+      "import": "./src/matching/index.ts",
+      "default": "./src/matching/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npx --yes tsx --test src/matching/matchingEngine.test.ts src/schemas/authSchemas.test.ts"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
